@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="2.4.1" data-basepath=".." data-revision="1416039010393">
+    <div class="book" data-level="2.4.1" data-basepath=".." data-revision="1416042406955">
     
 
 <div class="book-summary">
@@ -731,15 +731,63 @@
                     <section class="normal" id="section-gitbook_34">
                     
                         <h1 id="touch-icon">touch-icon</h1>
-<p><strong>apple-touch-icon</strong></p>
-<pre><code>&lt;!--Default --&gt;
-&lt;link rel=&quot;apple-touch-icon-precomposed&quot; href=&quot;apple-touch-icon-57.png&quot; /&gt;
-&lt;!-- 72 for ipad --&gt;
-&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;72x72&quot; href=&quot;apple-touch-icon-72.png&quot; /&gt;
-&lt;!-- 114 for iphone retina --&gt;
-&lt;link rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;114x114&quot; href=&quot;apple-touch-icon-114.png&quot; /&gt;
-</code></pre><p>apple-touch-icon-precomposed(precomposed告诉浏览器不要给icon添加额外的效果)</p>
-<p><strong>从桌面 icon 启动 iOS Safari 是否进入全屏状态（App模式）</strong></p>
+<p><strong>favicon.ico</strong></p>
+<p>favicon.ico = [16x16,32x32,48x48]</p>
+<pre><code>&lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;/favicon&quot;/&gt;
+link rel=&quot;shortcut icon&quot; type=&quot;mage/x-icon&quot; href=&quot;/favicon.ico&quot;
+</code></pre><p>已经废弃的协议，不建议在HTML里面定义，会错误的使用废弃的ico文件，可以直接放于根目录供低版本浏览器使用。</p>
+<p>一个文件里面包含多个尺寸的制作:</p>
+<p><a href="http://demosthenes.info/blog/467/Creating-MultiResolution-Favicons-For-Web-Pages-With-GIMP" target="_blank">Creating Multi-Resolution Favicons For Web Pages With GIMP</a></p>
+<p><strong>PNG icons</strong></p>
+<p>HTML5 new attributes &quot;sizes&quot;</p>
+<pre><code>&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;/favicon-16x16.png&quot; sizes=&quot;16x16&quot;/&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;/favicon-32x32.png&quot; sizes=&quot;32x32&quot;/&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;/favicon-96x96.png&quot; sizes=&quot;96x96&quot;/&gt;
+</code></pre><p><strong>apple-touch-icon</strong></p>
+<p>&quot;添加到桌面&quot;，&quot;添加到书签&quot;</p>
+<pre><code>&lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;57x57&quot; href=&quot;apple-touch-icon-57.png&quot; /&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;114x114&quot; href=&quot;apple-touch-icon-114.png&quot; /&gt;
+
+&lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;72x72&quot; href=&quot;apple-touch-icon-72.png&quot; /&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;144x144&quot; href=&quot;apple-touch-icon-144.png&quot; /&gt;
+
+&lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;60x60&quot; href=&quot;apple-touch-icon-60.png&quot; /&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;120x120&quot; href=&quot;apple-touch-icon-120.png&quot; /&gt;
+
+&lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;76x76&quot; href=&quot;apple-touch-icon-76.png&quot; /&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;152x152&quot; href=&quot;apple-touch-icon-152.png&quot; /&gt;
+</code></pre><p>可以将rel=&quot;apple-touch-icon&quot;换为rel=&quot;apple-touch-icon-precomposed&quot;(precomposed告诉浏览器不要给icon添加额外的效果)</p>
+<p><strong>Windows 8 Tile Image</strong></p>
+<p>windows 8.0:</p>
+<pre><code>&lt;meta name=&quot;msapplication-TileColor&quot; content=&quot;#ff0000&quot;/&gt;
+&lt;meta name=&quot;msapplication-TileImage&quot; content=&quot;/mstile-144x144.png&quot;/&gt;
+</code></pre><p>windows 8.1 &amp; IE11:/browserconfig.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;browserconfig&gt;
+    &lt;msapplication&gt;
+     &lt;tile&gt;
+        &lt;square70x70logo src=&quot;small.png&quot;/&gt;
+        &lt;square150x150logo src=&quot;medium.png&quot;/&gt;
+        &lt;wide310x150logo src=&quot;wide.png&quot;/&gt;
+        &lt;square310x310logo src=&quot;large.png&quot;/&gt;
+        &lt;TileColor&gt;#009900&lt;/TileColor&gt;
+     &lt;/tile&gt;
+     &lt;badge&gt;
+        &lt;polling-uri src=&quot;badge.xml&quot;/&gt;
+        &lt;frequency&gt;30&lt;/frequency&gt;
+     &lt;/badge&gt;
+     &lt;notification&gt;
+        &lt;polling-uri  src=&quot;1.xml&quot;/&gt;
+        &lt;polling-uri2 src=&quot;2.xml&quot;/&gt;
+        &lt;polling-uri3 src=&quot;3.xml&quot;/&gt;
+        &lt;polling-uri4 src=&quot;4.xml&quot;/&gt;
+        &lt;polling-uri5 src=&quot;5.xml&quot;/&gt;
+        &lt;frequency&gt;30&lt;/frequency&gt;
+        &lt;cycle&gt;1&lt;/cycle&gt;
+     &lt;/notification&gt;
+   &lt;/msapplication&gt;
+&lt;/browserconfig&gt;
+</code></pre><p><strong>从桌面 icon 启动 iOS Safari 是否进入全屏状态（App模式）</strong></p>
 <p>可选值：yes | no</p>
 <pre><code>&lt;meta content=&quot;yes&quot; name=&quot;apple-mobile-web-app-capable&quot;/&gt;
 </code></pre><p><strong> iOS Safari 全屏状态下的状态栏样式</strong></p>
